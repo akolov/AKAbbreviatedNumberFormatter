@@ -4,16 +4,16 @@
 import PackageDescription
 
 let package = Package(
-  name: "AKAbbreviatedNumberFormatted",
+  name: "AKAbbreviatedNumberFormatter",
   products: [
     .library(
-      name: "AKAbbreviatedNumberFormatted",
-      targets: ["AKAbbreviatedNumberFormatted"]
+      name: "AKAbbreviatedNumberFormatter",
+      targets: ["AKAbbreviatedNumberFormatter"]
     ),
   ],
   targets: [
     .target(
-      name: "AKAbbreviatedNumberFormatted",
+      name: "AKAbbreviatedNumberFormatter",
       dependencies: []
     ),
   ]
