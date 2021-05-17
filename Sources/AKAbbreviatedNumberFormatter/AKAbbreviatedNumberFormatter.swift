@@ -3,8 +3,8 @@ import Foundation
 open class AKAbbreviatedNumberFormatter: NumberFormatter {
 
   public struct Abbrevation {
-    let threshold: NSDecimalNumber
-    let divisor: NSDecimalNumber
+    let threshold: Decimal
+    let divisor: Decimal
     let suffix: String
   }
 
@@ -20,7 +20,7 @@ open class AKAbbreviatedNumberFormatter: NumberFormatter {
     let abbreviation: Abbrevation = {
       var prevAbbreviation = abbreviations[0]
       for tmpAbbreviation in abbreviations {
-        if decimal.compare(tmpAbbreviation.threshold) == .orderedAscending {
+        if decimal.compare(tmpAbbreviation.threshold as NSDecimalNumber) == .orderedAscending {
           break
         }
         prevAbbreviation = tmpAbbreviation
@@ -28,7 +28,7 @@ open class AKAbbreviatedNumberFormatter: NumberFormatter {
       return prevAbbreviation
     }()
 
-    let value = decimal.dividing(by: abbreviation.divisor)
+    let value = decimal.dividing(by: abbreviation.divisor as NSDecimalNumber)
     positiveSuffix = abbreviation.suffix
     negativeSuffix = abbreviation.suffix
     allowsFloats = true
