@@ -6,6 +6,12 @@ open class AKAbbreviatedNumberFormatter: NumberFormatter {
     let threshold: Decimal
     let divisor: Decimal
     let suffix: String
+
+    public init(threshold: Decimal, divisor: Decimal, suffix: String) {
+      self.threshold = threshold
+      self.divisor = divisor
+      self.suffix = suffix
+    }
   }
 
   open var abbreviations: [Abbrevation] = [
